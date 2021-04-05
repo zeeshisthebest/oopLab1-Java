@@ -17,6 +17,8 @@ public class TestClass {
 		int course1 = university.activate("Object Oriented Program", "Zecho");
 		int course2 = university.activate("Database", "Hello");
 		
+		System.out.println("**********************************************************************");
+		
 		System.out.println(university.register(id1, course1));
 		System.out.println(university.register(id1, course2));
 		System.out.println(university.register(id2, course1));
@@ -32,6 +34,6 @@ public class TestClass {
 		System.out.println(university.listAttendees(course2));
 		System.out.println(university.studyPlan(id1));
 		System.out.println(university.studyPlan(id2));
-		
+		System.out.println("**********************************************************************");
 	}
 }
