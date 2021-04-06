@@ -4,12 +4,13 @@
 package university;
 
 public class University {
-	private static final int MAX_STUDENTS = 1000;
-	private static final int MAX_COURSES = 50;
-	private static final int STUDENT_OFFSET = 10000;
-	private static final int COURSE_OFFSET = 10; 
-	private static int numberOfStudents = 0;
-	private static int coursesAdded = 0;
+	//adding static method was the mistake
+	private final int MAX_STUDENTS = 1000;
+	private final int MAX_COURSES = 50;
+	private final int STUDENT_OFFSET = 10000;
+	private final int COURSE_OFFSET = 10; 
+	private int numberOfStudents = 0;
+	private int coursesAdded = 0;
 	private String universityName;
 	private String rector;
 	private Student[] student = new Student[MAX_STUDENTS]; 
@@ -35,10 +36,10 @@ public class University {
 
 	//Methods to enroll the student
 	public int enroll(String firstName, String lastName){
-		student[numberOfStudents] = new Student();
+		student[numberOfStudents] = new Student(); //This initializes each new array item.
+		//The addStudent return ID offset by 10,000, numberOfStudents is the index for array and is class attribute
 		int id = student[numberOfStudents].addStudent(firstName, lastName, numberOfStudents);
-		System.out.println(numberOfStudents);
-		++numberOfStudents;
+		++numberOfStudents; // incremented to store next student in the next item in array.
 		return id; 	
 	}
 	
