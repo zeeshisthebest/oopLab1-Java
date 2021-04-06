@@ -24,16 +24,14 @@ class Courses {
 		return courseCode + ", " + courseTitle + ", " + professor;
 	}
 	
-	String addAttendee(Student attendee) {
+	void addAttendee(Student attendee) {
 		student[attendee_count] = new Student();
 		student[attendee_count++] = attendee;
-		String result = "Added " + attendee.getStudent() + " to " + courseTitle;
-		return result;
 	}
 	
 	String getAttendees() {
 		int i = 0;
-		String list = "Course: " + courseTitle + " attended by:\n";
+		String list = "";
 		while (student[i] != null) {
 			list += student[i].getStudent() + "\n";
 			++i;

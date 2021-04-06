@@ -34,7 +34,7 @@ class Student {
 	}
 	
 	String getCoursesEnrolled() {
-		String result = studentID + " Attending:\n";
+		String result = "";
 		int i = 0;
 		while(course[i] != null) {
 			result += course[i].getCourse() + "\n";

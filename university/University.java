@@ -25,7 +25,7 @@ public class University {
 	}
 	
 	//Getters
-	public String getUniversityName() {
+	public String getName() {
 		return universityName;
 	}
 	
@@ -36,9 +36,9 @@ public class University {
 	//Methods to enroll the student
 	public int enroll(String firstName, String lastName){
 		student[numberOfStudents] = new Student();
-		int id = student[numberOfStudents].addStudent(firstName,
-				lastName, numberOfStudents);
-		numberOfStudents++;
+		int id = student[numberOfStudents].addStudent(firstName, lastName, numberOfStudents);
+		System.out.println(numberOfStudents);
+		++numberOfStudents;
 		return id; 	
 	}
 	
@@ -61,12 +61,11 @@ public class University {
 	}
 	
 	//Adding a attendee to the course
-	public String register(int studentID, int courseCode) {
+	public void register(int studentID, int courseCode) {
 		Student attendee = new Student();
 		attendee = student[studentID - STUDENT_OFFSET];
-		attendee.addCourseToStudent(courses[courseCode - COURSE_OFFSET]);
-		String result = courses[courseCode - COURSE_OFFSET].addAttendee(attendee);
-		return result;
+		attendee.addCourseToStudent(courses[courseCode - COURSE_OFFSET]) ;
+		courses[courseCode - COURSE_OFFSET].addAttendee(attendee);
 	}
 	
 	public String listAttendees(int courseCode) {
