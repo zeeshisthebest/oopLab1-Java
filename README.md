@@ -1,3 +1,2 @@
-# oopLab1
-The Lab 1 tasks.
-from R1 to R5
+# oopLab1 (JAVA)
+A simple program to emulate the management of student and courses in the university.
